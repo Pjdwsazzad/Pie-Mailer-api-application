@@ -175,6 +175,7 @@ for auto generate Purchased product’s name
 for auto generate Number of items purchased
 ``txt
 { product_quantity }
+
 ```
 for auto generate Price per item
 ``txt
@@ -184,18 +185,22 @@ for auto generate Price per item
 for auto generate Total purchase amount
 ``txt
 { total_price }
+
 ```
 for auto generate Payment method used
 ``txt
-{ payment_method }
+{ payment_method 
+
 ```
 for auto generate Payment processing date
 ``txt
 { payment_date }
+
 ```
 for auto generate Customer's email address
 ``txt
 { recipient_email }
+
 ```	
 
 ---
