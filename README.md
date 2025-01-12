@@ -152,27 +152,50 @@ Dynamic shortcodes personalize email content by replacing placeholders with actu
 
 🔑 Dynamic Shortcodes Reference with Shortcode	Description
 
-
+for auto generate Customer’s unique account ID use this short code
 ```txt
 { account_id }
 ```
-for auto generate Customer’s unique account ID
+for auto generate Order identification number use this short code
 ```txt
 { order_id }
 ```
-for auto generate Order identification number
+for auto generate Date of purchase use this short code
 ```txt
 { purchase_date }
 ```
-for auto generate Date of purchase
-```txt{ invoice_number }```	for auto generate Invoice number for the order
-``txt{ product_name }```	for auto generate Purchased product’s name
-``txt{ product_quantity ```}	for auto generate Number of items purchased
-``txt{ product_price }```	for auto generate Price per item
-``txt{ total_price }```	for auto generate Total purchase amount
-``txt{ payment_method }```	for auto generate Payment method used
-``txt{ payment_date }```	for auto generate Payment processing date
-``txt{ recipient_email }```	for auto generate Customer's email address
+for auto generate Invoice number for the order use this short code
+```txt
+{ invoice_number }
+```
+for auto generate Purchased product’s name
+``txt
+{ product_name }
+```
+	for auto generate Number of items purchased
+``txt
+{ product_quantity }
+```
+for auto generate Price per item
+``txt
+{ product_price }
+```
+for auto generate Total purchase amount
+``txt
+{ total_price }
+```
+for auto generate Payment method used
+``txt
+{ payment_method }
+```
+for auto generate Payment processing date
+``txt
+{ payment_date }
+```
+for auto generate Customer's email address
+``txt
+{ recipient_email }
+```	
 
 ---
 
