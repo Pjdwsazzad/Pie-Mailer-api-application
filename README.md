@@ -169,36 +169,36 @@ for auto generate Invoice number for the order use this short code
 { invoice_number }
 ```
 for auto generate Purchased product’s name
-``txt
+```txt
 { product_name }
 ```
 for auto generate Number of items purchased
-``txt
+```txt
 { product_quantity }
-
 ```
+
 for auto generate Price per item
-``txt
+```txt
 { product_price }
 
 ```
 for auto generate Total purchase amount
-``txt
+```txt
 { total_price }
 
 ```
 for auto generate Payment method used
-``txt
+```txt
 { payment_method 
 
 ```
 for auto generate Payment processing date
-``txt
+```txt
 { payment_date }
 
 ```
 for auto generate Customer's email address
-``txt
+```txt
 { recipient_email }
 
 ```	
