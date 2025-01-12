@@ -23,7 +23,7 @@ Channel: Coding_with_p2ilab
 1. Open Notepad
 
 2. Paste the following configuration:
-
+```txt
 SMTP_NAME=smtp_config.txt
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
@@ -32,7 +32,7 @@ SMTP_USER=Your Gmail address
 SMTP_PASS=Your app-specific Gmail password
 SMTP_FROM_NAME=The sender's display name
 FROM_EMAIL=Your Gmail address
-
+```
 🔍 Explanation:
 
 SMTP_NAME: The filename for this configuration.
