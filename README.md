@@ -213,6 +213,48 @@ for auto generate Customer's email address
 2. Verify if all placeholders are replaced with actual values.
 
 
+To generate a sample CSV file for your email-sending application, follow this simple tutorial. This file will contain the recipient email addresses in the correct format.
+
+Step 1: CSV File Format
+For your application, the CSV should have a header row and email addresses listed below it.
+
+Example:
+
+```csv
+Copy code
+email
+john.doe@example.com
+jane.smith@example.com
+alex.brown@example.com
+```
+Step 2: Creating the CSV File
+Option 1: Using Excel or Google Sheets
+Open Excel or Google Sheets.
+In the first cell (A1), type email.
+Enter recipient emails below it (A2, A3, etc.).
+Export/Download the file as a .csv file.
+In Excel: File → Save As → Choose CSV (Comma delimited).
+In Google Sheets: File → Download → Comma-separated values (.csv).
+Option 2: Using a Text Editor
+Open Notepad (Windows) or TextEdit (Mac).
+
+Paste this content:
+
+csv
+Copy code
+email
+john.doe@example.com
+jane.smith@example.com
+alex.brown@example.com
+Save the file as recipients.csv.
+
+In Notepad: File → Save As → Select All Files → Save as recipients.csv.
+Step 3: Uploading the CSV to the Application
+Open your web app.
+Navigate to the Upload Recipients section.
+Click Upload and select the recipients.csv file.
+Once uploaded, it will be used to send emails to the listed addresses.
+
 
 
 ---
@@ -235,9 +277,9 @@ If this tutorial helped you, like, share, and subscribe to Coding_with_p2ilab fo
 
 YouTube: Coding_with_p2ilab
 
-Email: info@costcocenter.com
+Email: admin@p2ilab.com
 
-Location: 5437 Costco Blvd, Suite 100, Bayshore, NY, 11706
+Location: 74 Belford Avenue, Bay Shore, NY 11706
 
 Social Media: Facebook | Twitter | LinkedIn
 
@@ -245,9 +287,9 @@ Social Media: Facebook | Twitter | LinkedIn
 
 ---
 
-© 2024 Costco Center. All rights reserved.
+© 2024 Pie-Mailer . All rights reserved.
 
 
 ---
 
-This README is fully formatted for GitHub and will display the copy button for all code blocks. Let me know if you'd like any changes!
+
