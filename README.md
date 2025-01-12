@@ -172,13 +172,14 @@ for auto generate Purchased product’s name
 ``txt
 { product_name }
 ```
-	for auto generate Number of items purchased
+for auto generate Number of items purchased
 ``txt
 { product_quantity }
 ```
 for auto generate Price per item
 ``txt
 { product_price }
+
 ```
 for auto generate Total purchase amount
 ``txt
