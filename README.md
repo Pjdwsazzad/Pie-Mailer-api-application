@@ -66,7 +66,7 @@ Save as type: All Files
 1. Open a new Notepad window
 
 2. Paste the following configuration for multiple SMTP setups:
-
+```txt
 SMTP_NAME=smtp_config_1.txt
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
@@ -93,16 +93,7 @@ SMTP_FROM_NAME=First Sender
 FROM_EMAIL=Your Gmail address
 
 
-# Second SMTP Configuration
-SMTP_NAME=smtp_config_2.txt
-SMTP_USER=Another Gmail address
-SMTP_PASS=Another app-specific Gmail password
-SMTP_FROM_NAME=Second Sender
-FROM_EMAIL=Another Gmail address
-
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_SECURE=false
+```
 
 💾 Save the File:
 
@@ -162,9 +153,18 @@ Dynamic shortcodes personalize email content by replacing placeholders with actu
 🔑 Dynamic Shortcodes Reference with Shortcode	Description
 
 
-```txt{ account_id }```	for auto generate Customer’s unique account ID
-```txt{ order_id }```	for auto generate Order identification number
-```txt{ purchase_date }```	for auto generate Date of purchase
+```txt
+{ account_id }
+```
+for auto generate Customer’s unique account ID
+```txt
+{ order_id }
+```
+for auto generate Order identification number
+```txt
+{ purchase_date }
+```
+for auto generate Date of purchase
 ```txt{ invoice_number }```	for auto generate Invoice number for the order
 ``txt{ product_name }```	for auto generate Purchased product’s name
 ``txt{ product_quantity ```}	for auto generate Number of items purchased
