@@ -1,7 +1,4 @@
-Here’s a complete GitHub README.md file based on your tutorial content. It includes proper formatting, code blocks with syntax highlighting, and structured sections for clarity.
 
-
----
 
 📧 SMTP Configuration & Dynamic Email Templates
 
@@ -70,8 +67,10 @@ Save as type: All Files
 
 2. Paste the following configuration for multiple SMTP setups:
 
-# First SMTP Configuration
 SMTP_NAME=smtp_config_1.txt
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_SECURE=false
 SMTP_USER=Your Gmail address
 SMTP_PASS=Your app-specific Gmail password
 SMTP_FROM_NAME=First Sender
@@ -80,6 +79,19 @@ FROM_EMAIL=Your Gmail address
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_SECURE=false
+SMTP_USER=Your Gmail address
+SMTP_PASS=Your app-specific Gmail password
+SMTP_FROM_NAME=First Sender
+FROM_EMAIL=Your Gmail address
+
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=Your Gmail address
+SMTP_PASS=Your app-specific Gmail password
+SMTP_FROM_NAME=First Sender
+FROM_EMAIL=Your Gmail address
+
 
 # Second SMTP Configuration
 SMTP_NAME=smtp_config_2.txt
@@ -144,11 +156,23 @@ Dynamic shortcodes personalize email content by replacing placeholders with actu
 </body>
 </html>
 
-
+```
 ---
 
-🔑 Dynamic Shortcodes Reference
+🔑 Dynamic Shortcodes Reference with Shortcode	Description
 
+
+```txt{ account_id }```	for auto generate Customer’s unique account ID
+```txt{ order_id }```	for auto generate Order identification number
+```txt{ purchase_date }```	for auto generate Date of purchase
+```txt{ invoice_number }```	for auto generate Invoice number for the order
+``txt{ product_name }```	for auto generate Purchased product’s name
+``txt{ product_quantity ```}	for auto generate Number of items purchased
+``txt{ product_price }```	for auto generate Price per item
+``txt{ total_price }```	for auto generate Total purchase amount
+``txt{ payment_method }```	for auto generate Payment method used
+``txt{ payment_date }```	for auto generate Payment processing date
+``txt{ recipient_email }```	for auto generate Customer's email address
 
 ---
 
