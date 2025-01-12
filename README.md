@@ -221,7 +221,7 @@ For your application, the CSV should have a header row and email addresses liste
 Example:
 
 ```csv
-Copy code
+
 email
 john.doe@example.com
 jane.smith@example.com
@@ -240,12 +240,12 @@ Open Notepad (Windows) or TextEdit (Mac).
 
 Paste this content:
 
-csv
-Copy code
+```csv
 email
 john.doe@example.com
 jane.smith@example.com
 alex.brown@example.com
+```
 Save the file as recipients.csv.
 
 In Notepad: File → Save As → Select All Files → Save as recipients.csv.
@@ -266,7 +266,7 @@ You've learned how to:
 Set up single and multiple SMTP configurations using Gmail.
 
 Create and use dynamic shortcodes in your email templates.
-
+To generate a sample CSV file for your email-sending application
 
 If this tutorial helped you, like, share, and subscribe to Coding_with_p2ilab for more tech content!
 
