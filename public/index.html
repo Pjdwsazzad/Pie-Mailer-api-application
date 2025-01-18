@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Campaign Manager</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+            padding-top: 20px;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="file"],
+        select,
+        input[type="text"],
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        select {
+            background-color: #fafafa;
+        }
+
+        form {
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .form-container .form-group input[type="file"] {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-container .form-group button {
+            padding: 12px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .form-container .form-group button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-container .form-group select {
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Email Campaign Manager</h1>
+
+    <div class="form-container">
+        <h2>Upload SMTP Configuration</h2>
+        <form id="smtpForm">
+            <div class="form-group">
+                <label for="smtp_credentials">Choose SMTP Configuration File</label>
+                <input type="file" id="smtp_credentials" name="smtp_credentials" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Upload SMTP</button>
+            </div>
+        </form>
+
+        <h2>Upload Email Template</h2>
+        <form id="templateForm">
+            <div class="form-group">
+                <label for="email_template">Choose Email Template File</label>
+                <input type="file" id="email_template" name="email_template" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Upload Template</button>
+            </div>
+        </form>
+
+        <h2>Upload Recipients List</h2>
+        <form id="recipientsForm">
+            <div class="form-group">
+                <label for="recipients_list">Choose Recipients List File</label>
+                <input type="file" id="recipients_list" name="recipients_list" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Upload Recipients</button>
+            </div>
+        </form>
+
+        <h2>Send Emails</h2>
+        <form id="sendEmailForm">
+            <div class="form-group">
+                <label for="smtpSelect">Select SMTP Configuration</label>
+                <select id="smtpSelect" name="smtpConfig" required></select>
+            </div>
+            <div class="form-group">
+                <label for="templateSelect">Select Email Template</label>
+                <select id="templateSelect" name="template" required></select>
+            </div>
+            <div class="form-group">
+                <label for="recipientsSelect">Select Recipients List</label>
+                <select id="recipientsSelect" name="recipientFile" required></select>
+            </div>
+            <div class="form-group">
+                <label for="subject">Email Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Email Subject" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Send Emails</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('smtpForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            await fetch('/upload_smtp', { method: 'POST', body: formData });
+            alert('SMTP configuration uploaded');
+        };
+
+        document.getElementById('templateForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            await fetch('/upload_template', { method: 'POST', body: formData });
+            alert('Email template uploaded');
+        };
+
+        document.getElementById('recipientsForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            await fetch('/upload_recipients', { method: 'POST', body: formData });
+            alert('Recipients list uploaded');
+        };
+
+        document.getElementById('sendEmailForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            await fetch('/send_emails', { method: 'POST', body: JSON.stringify(Object.fromEntries(formData)), headers: { 'Content-Type': 'application/json' } });
+            alert('Emails sent');
+        };
+
+        // Fetch SMTP, templates, and recipients to populate selects
+        const fetchOptions = async () => {
+            const smtpResponse = await fetch('/list_smtp');
+            const smtpList = await smtpResponse.json();
+            const smtpSelect = document.getElementById('smtpSelect');
+            smtpList.forEach(smtp => {
+                const option = document.createElement('option');
+                option.value = smtp;
+                option.textContent = smtp;
+                smtpSelect.appendChild(option);
+            });
+
+            const templateResponse = await fetch('/list_templates');
+            const templateList = await templateResponse.json();
+            const templateSelect = document.getElementById('templateSelect');
+            templateList.forEach(template => {
+                const option = document.createElement('option');
+                option.value = template;
+                option.textContent = template;
+                templateSelect.appendChild(option);
+            });
+
+            const recipientsResponse = await fetch('/list_recipients');
+            const recipientsList = await recipientsResponse.json();
+            const recipientsSelect = document.getElementById('recipientsSelect');
+            recipientsList.forEach(recipient => {
+                const option = document.createElement('option');
+                option.value = recipient;
+                option.textContent = recipient;
+                recipientsSelect.appendChild(option);
+            });
+        };
+
+        fetchOptions();
+    </script>
+</body>
+</html>
