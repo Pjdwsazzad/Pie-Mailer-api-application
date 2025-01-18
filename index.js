@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const upload = multer({ dest: 'uploads/' });
-const BASE_URL = 'https://pie-mailer.koyeb.app';
+const BASE_URL = 'https://piemail.space';
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
