@@ -189,7 +189,12 @@ for auto generate Total purchase amount
 ```
 for auto generate Payment method used
 ```txt
-{ payment_method 
+{ payment_method }
+
+```
+for auto generate Payment confirmation id
+```txt
+ { payment_confirmation_id }
 
 ```
 for auto generate Payment processing date
