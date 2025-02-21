@@ -122,22 +122,22 @@ Dynamic shortcodes personalize email content by replacing placeholders with actu
   <h1>Order Confirmation</h1>
   <p>Thank you for your purchase!</p>
 
-  <p>Dear Customer, [{ account_id }]</p>
+  <p>Dear Customer, [{{account_id}}]</p>
 
   <h2>Order Information</h2>
-  <p>Order ID: { order_id }</p>
-  <p>Purchase Date: { purchase_date }</p>
-  <p>Invoice Number: { invoice_number }</p>
+  <p>Order ID: {{order_id}}</p>
+  <p>Purchase Date: {{purchase_date}}</p>
+  <p>Invoice Number: {{invoice_number}}</p>
 
   <h2>Product Details</h2>
-  <p>Product Name: { product_name }</p>
-  <p>Quantity: { product_quantity }</p>
-  <p>Price per Item: ${ product_price }</p>
-  <p>Total Price: ${ total_price }</p>
+  <p>Product Name: {{product_name}}</p>
+  <p>Quantity: {{product_quantity}}</p>
+  <p>Price per Item: ${{product_price}}</p>
+  <p>Total Price: ${{total_price}}</p>
 
   <h2>Payment Information</h2>
-  <p>Payment Method: { payment_method }</p>
-  <p>Payment Date: { payment_date }</p>
+  <p>Payment Method: {{payment_method}}</p>
+  <p>Payment Date: {{payment_date}}</p>
 
   <p>If you did not authorize this transaction, please contact support.</p>
 
@@ -154,57 +154,52 @@ Dynamic shortcodes personalize email content by replacing placeholders with actu
 
 for auto generate Customer’s unique account ID use this short code
 ```txt
-{ account_id }
+{{account_id}}
 ```
 for auto generate Order identification number use this short code
 ```txt
-{ order_id }
+{{order_id}}
 ```
 for auto generate Date of purchase use this short code
 ```txt
-{ purchase_date }
+{{purchase_date}}
 ```
 for auto generate Invoice number for the order use this short code
 ```txt
-{ invoice_number }
+{{invoice_number}}
 ```
 for auto generate Purchased product’s name
 ```txt
-{ product_name }
+{{product_name}}
 ```
 for auto generate Number of items purchased
 ```txt
-{ product_quantity }
+{{product_quantity}}
 ```
 
 for auto generate Price per item
 ```txt
-{ product_price }
+{{product_price}}
 
 ```
 for auto generate Total purchase amount
 ```txt
-{ total_price }
+{{total_price}}
 
 ```
 for auto generate Payment method used
 ```txt
-{ payment_method }
-
-```
-for auto generate Payment confirmation id
-```txt
- { payment_confirmation_id }
+{{payment_method}}
 
 ```
 for auto generate Payment processing date
 ```txt
-{ payment_date }
+{{payment_date}}
 
 ```
 for auto generate Customer's email address
 ```txt
-{ recipient_email }
+{{recipient_email}}
 
 ```	
 
@@ -246,7 +241,6 @@ Open Notepad (Windows) or TextEdit (Mac).
 Paste this content:
 
 ```csv
-email
 john.doe@example.com
 jane.smith@example.com
 alex.brown@example.com
